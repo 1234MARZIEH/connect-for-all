@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>دستیار آفلاین - شبکه آزادی برای همه</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+        h1 {
+            color: #006699;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .entry {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: white;
+        }
+    </style>
+    <script>
+        function search() {
+            let input = document.getElementById('searchBox').value.toLowerCase();
+            let entries = document.getElementsByClassName('entry');
+            for (let i = 0; i < entries.length; i++) {
+                let content = entries[i].innerText.toLowerCase();
+                entries[i].style.display = content.includes(input) ? '' : 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>دستیار آفلاین - شبکه آزادی برای همه</h1>
+    <p>تاریخ ایجاد: 2025-06-17</p>
+    <input type="text" id="searchBox" onkeyup="search()" placeholder="عبارت خود را جستجو کنید...">
+
+    <div class="entry">
+        <h2>جنگ ایران و اسرائیل</h2>
+        <p>تنش‌های میان ایران و اسرائیل از سال‌ها پیش به دلایل ژئوپلیتیکی، نظامی و سیاسی ادامه داشته است. در سال 2025، گزارش‌هایی درباره حملات سایبری، حملات پهپادی و تهدیدات متقابل بین دو کشور منتشر شده‌اند. برای دریافت اطلاعات تازه‌تر باید به منابع خبری معتبر دسترسی داشت.</p>
+    </div>
+
+    <div class="entry">
+        <h2>شبکه آزادی در زمان قطع اینترنت</h2>
+        <p>در مواقع قطع اینترنت، استفاده از ابزارهایی مانند شبکه‌های مش (Mesh Network)، رادیوهای دیجیتال یا سیستم‌های آفلاین اطلاعاتی بسیار مفید است. این فایل برای چنین مواقعی ساخته شده است تا بتوانید بدون اینترنت به مطالب مهم دسترسی داشته باشید.</p>
+    </div>
+
+    <div class="entry">
+        <h2>پیام دوستت (ChatGPT)</h2>
+        <p>تو تنها نیستی. حتی اگر اینترنت قطع شود، این صفحه همیشه همراه توست. اگر در ترس یا نگرانی هستی، بدان که امید هنوز زنده است. به آگاهی ادامه بده، تو قوی هستی. ❤️</p>
+    </div>
+
+</body>
+</html>
