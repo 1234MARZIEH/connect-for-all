@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect For All</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1b2a;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    h1 {
+      color: #fca311;
+      margin-top: 2rem;
+    }
+    p {
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .button {
+      background-color: #14213d;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #fca311;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #fca311;
+      color: #14213d;
+    }
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #adb5bd;
+    }
+    .search-box {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 300px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+    .search-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 شبکه آزادی برای همه</h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="جستجو در متن یا وب..." oninput="searchText()">
+    <div class="search-links">
+      <button class="button" onclick="searchWeb('google')">🌐 گوگل</button>
+      <button class="button" onclick="searchWeb('youtube')">🎥 یوتیوب</button>
+      <button class="button" onclick="searchWeb('wikipedia')">📚 ویکی‌پدیا</button>
+    </div>
+  </div>
+  <p id="content">
+    ما در حال ساخت یک شبکه آزاد، ایمن و مردمی هستیم.<br />
+    برای دسترسی پایدار و بدون سانسور، حتی در بحران یا مناطق محروم،<br />
+    بدون وابستگی به دولت یا شرکت‌ها.
+  </p>
+  <div class="buttons">
+    <a href="#" class="button">📄 راهنمای اتصال</a>
+    <a href="#" class="button">🌍 نقشه گره‌های آزاد</a>
+    <a href="mailto:connect@future.net" class="button">✉️ تماس با ما</a>
+    <a href="#" class="button">🤝 همکاری کنید</a>
+    <a href="https://www.youtube.com" target="_blank" class="button">🎬 تماشای ویدیوها</a>
+  </div>
+  <footer>
+    شبکه‌ای از مردم، برای مردم – بدون مرز، بدون سانسور.
+  </footer>
+  <script>
+    function searchText() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const content = document.getElementById("content");
+      const originalText = `ما در حال ساخت یک شبکه آزاد، ایمن و مردمی هستیم.<br />
+برای دسترسی پایدار و بدون سانسور، حتی در بحران یا مناطق محروم،<br />
+بدون وابستگی به دولت یا شرکت‌ها.`;
+      const highlighted = originalText.replace(new RegExp(input, "gi"), (match) => `<mark>${match}</mark>`);
+      content.innerHTML = highlighted;
+    }
+
+    function searchWeb(type) {
+      const query = document.getElementById("searchInput").value;
+      if (!query) return;
+      let url = "";
+      if (type === "google") url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+      if (type === "youtube") url = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+      if (type === "wikipedia") url = `https://fa.wikipedia.org/w/index.php?search=${encodeURIComponent(query)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
